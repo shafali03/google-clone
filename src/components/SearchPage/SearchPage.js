@@ -66,22 +66,20 @@ function SearchPage() {
                 <Link to='/tools'>Tools</Link>
               </div>
             </div>
-
-
-
-
-
-
-            <div className="searchPage__iconsRight">
-
-            </div>
           </div>
         </div>
       </div>
 
-      <div className="searchPage__results">
 
-      </div>
+
+      {true && (
+        <div className="searchPage__results">
+          <p className="searchPage__resultCount">
+            About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </p>
+        </div>
+      )}
+
 
     </div>
   )
