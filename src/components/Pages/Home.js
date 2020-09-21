@@ -19,7 +19,6 @@ function Home() {
           <Avatar />
         </div>
       </div>
-
       <div className="home__body">
 
       </div>
