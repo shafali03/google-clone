@@ -13,13 +13,13 @@ function Search({ hideButtons = false }) {
   const [input, setInput] = useState('')
   const history = useHistory()
 
-  const search = e => {
+  const search = (e) => {
     e.preventDefault()
-    console.log('search button')
+    console.log('You hit the search button', input)
 
     dispatch({
-      type: actionTypes.SET_SEARCH_TEAM,
-      term: input,
+      type: actionTypes.SET_SEARCH_TERM,
+      term: input
     })
 
     history.push('/search')
@@ -36,10 +36,7 @@ function Search({ hideButtons = false }) {
 
       {!hideButtons ? (
         <div className="search__buttons">
-          <Button
-            type='submit'
-            onClick={search}
-            variant='outlined'>Google Search
+          <Button type='submit' onClick={search} variant='outlined'>Google Search
           </Button>
 
           <Button
