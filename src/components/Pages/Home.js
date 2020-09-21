@@ -20,10 +20,12 @@ function Home() {
           <Avatar />
         </div>
       </div>
+
       <div className="home__body">
-        <img src="https://res.cloudinary.com/shafali/image/upload/v1600669253/google-logo-_ol2kje.png" alt="" />
+        <img src="https://res.cloudinary.com/shafali/image/upload/v1600669253/google-logo-_ol2kje.png" alt=""
+        />
         <div className="home__inputContainer">
-          <Search />
+          <Search hideButtons />
         </div>
       </div>
     </div>
