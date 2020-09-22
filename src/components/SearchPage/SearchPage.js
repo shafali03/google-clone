@@ -32,13 +32,10 @@ function SearchPage() {
 
           <div className="searchPage__icons">
             <div className="searchPage__iconsLeft">
+
               <div className="searchPage__icon">
                 <SearchIcon />
                 <Link to='/all'>All</Link>
-              </div>
-              <div className="searchPage__icon">
-                <Description />
-                <Link to='/news'>News</Link>
               </div>
               <div className="searchPage__icon">
                 <ImageIcon />
@@ -46,16 +43,21 @@ function SearchPage() {
               </div>
               <div className="searchPage__icon">
                 <LocalOfferIcon />
-                <Link to='/shopping'>shopping</Link>
+                <Link to='/shopping'>Shopping</Link>
               </div>
               <div className="searchPage__icon">
                 <RoomIcon />
-                <Link to='/maps'>maps</Link>
+                <Link to='/maps'>Maps</Link>
+              </div>
+              <div className="searchPage__icon">
+                <Description />
+                <Link to='/news'>News</Link>
               </div>
               <div className="searchPage__icon">
                 <MoreVertIcon />
-                <Link to='/more'>more</Link>
+                <Link to='/more'>More</Link>
               </div>
+
             </div>
 
             <div className='searchPage__iconsRight'>
@@ -72,27 +74,41 @@ function SearchPage() {
 
 
 
-      {true && (
+      {term && (
         <div className="searchPage__results">
           <p className="searchPage__resultCount">
             About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) for {term}
           </p>
-          {
-            data?.items.map(items => (
-              <div className='searchPage__result'>
-                <a href={item.link}>
-                  {item.displayLink}
-                </a>
-              </div>
-            ))
-          }
-          <a className='searchPage__result Title' href={item.link}>
-          </a>
-          <p className="searchPage__result Snippet">{item.snippet}</p>
+
+          {data?.items.map(item => (
+            <div
+              className='searchPage__result'>
+              <a
+                className='searchPage__resultLink' href={item.link}>
+                {item.pagemap?.cse_image?.length > 0 && item.pagemap?.cse_image[0]?.src && (
+                  <img
+                    className='searchPage__resultImage' src={
+                      item.pagemap?.cse_image[0]?.src
+                    }
+                    alt=''
+                  />
+                )}
+
+                {item.displayLink} *
+              </a>
+
+              <a
+                className='searchPage__result Title'
+                href={item.link}>
+                <h4>{item.title}</h4>
+              </a>
+
+              <p
+                className='searchPage__result Snippet'>{item.snippet}</p>
+            </div>
+          ))}
         </div>
       )}
-
-
     </div>
   )
 }
