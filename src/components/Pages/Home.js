@@ -25,7 +25,7 @@ function Home() {
         <img src="https://res.cloudinary.com/shafali/image/upload/v1600669253/google-logo-_ol2kje.png" alt=""
         />
         <div className="home__inputContainer">
-          <Search hideButtons />
+          <Search />
         </div>
       </div>
     </div>
