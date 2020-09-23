@@ -4,6 +4,9 @@
 
 A Google Search clone allows users to search on the google search engine using Google Search API. The clone is created using React hooks with function components. For styling used flexbox and Material UI icons.
 
+![GoogleSearchClone](demo/google-search-clone.gif)
+
+<br>
 yarn packages
 
 ```
